@@ -2,6 +2,8 @@
 
 
 var kaveriLista = [];
+var kaveriLista2 = [];
+
 function lisaaHenkilo(){
     var nimi = document.getElementById("nimi").value;
     kaveriLista.push(nimi);
@@ -22,6 +24,43 @@ function lisaaHenkilo(){
 
   
 }
+
+
+function lisaaKaveri(){
+    var nimi = document.getElementById("nimi2").value;
+    kaveriLista2.push(nimi);
+
+    paivitaKaverilista()  
+    document.getElementById("tekstikentta2").innerHTML = text;
+    document.getElementById("kaverilista2").reset();
+}
+
+function paivitaKaverilista(){
+    text = "<ol>";
+    for (let i = 0; i <kaveriLista2.length; i++) {
+
+     text += "<li>" + kaveriLista2[i] + "</li>";
+
+    }
+    text += "</ol>";
+}
+
+
+function poistaKaveri(){
+    var nimi = document.getElementById("nimi2").value;
+    kaveriLista2.splice(kaveriLista2.indexOf(nimi), 1);
+
+    paivitaKaverilista()
+    document.getElementById("tekstikentta2").innerHTML = text;
+    document.getElementById("kaverilista2").reset();
+}
+
+
+
+function jarjestaKaverit(){
+
+}
+
 
 
 
