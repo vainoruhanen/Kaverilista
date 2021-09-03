@@ -1,19 +1,26 @@
 
 
-const henkiloLista = [];
 
-
+var kaveriLista = [];
 function lisaaHenkilo(){
-    henkiloLista.push(document.getElementById("nimi"));
-   
+    var nimi = document.getElementById("nimi").value;
+    kaveriLista.push(nimi);
 
-    if(henkiloLista.length == 5){
-        var teksti = ""
-        for(let i = 0; i < henkiloLista.length; i++){
-            teksti += henkiloLista[i] + "<br>";
+
+    if(kaveriLista.length == 10){
+        text = "<ol>";
+        for (let i = 0; i <kaveriLista.length; i++) {
+
+         text += "<li>" + kaveriLista[i] + "</li>";
+
         }
-        document.getElementById("tekstikentta").innerHTML = JSON.stringify(henkiloLista, null, 2)
+        text += "</ol>";
+
+        document.getElementById("tekstikentta").innerHTML = text;
     }
+    document.getElementById("kaverilista").reset();
+
+  
 }
 
 
