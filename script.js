@@ -26,10 +26,18 @@ function lisaaHenkilo(){
 }
 
 
+
+
+
 function lisaaKaveri(){
     var nimi = document.getElementById("nimi2").value;
-    kaveriLista2.push(nimi);
 
+    if(nimi.length == 0){
+        alert("Kenttä pitää täyttää");
+    }else{
+        kaveriLista2.push(nimi);
+    }
+    
     paivitaKaverilista()  
     document.getElementById("tekstikentta2").innerHTML = text;
     document.getElementById("kaverilista2").reset();
@@ -50,7 +58,7 @@ function poistaKaveri(){
     var nimi = document.getElementById("nimi2").value;
     kaveriLista2.splice(kaveriLista2.indexOf(nimi), 1);
 
-    paivitaKaverilista()
+    paivitaKaverilista();
     document.getElementById("tekstikentta2").innerHTML = text;
     document.getElementById("kaverilista2").reset();
 }
@@ -58,7 +66,9 @@ function poistaKaveri(){
 
 
 function jarjestaKaverit(){
-
+    kaveriLista2.sort();
+    paivitaKaverilista();
+    document.getElementById("tekstikentta2").innerHTML = text;
 }
 
 
